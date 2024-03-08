@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar id="menuToolBarID"> <span>Menu</span></mat-toolbar>
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <app-header-page title="RetailBoss" [fontSize]=28 style="margin-bottom: 1.5rem;"></app-header-page>
+      <div class="rol-info-container">
+        <span>Administrador</span>
+        <mat-icon matSuffix class="fa-icon-class">account_circle</mat-icon>
+      </div>
+      <div class="dark-mode">
+        <mat-slide-toggle
+        [(ngModel)]="isDarkThemeActive"
+        color="primary"
+        (ngModelChange)="onChange($event)"
+        class="custom-switcher-pos"
+        matTooltip="Modo Oscuro"
+        checked="isDarkThemeActive"
+        ></mat-slide-toggle>
+        <mat-icon matSuffix class="fa-icon-class" *ngIf="isDarkThemeActive">dark_mode</mat-icon>
+        <mat-icon matSuffix class="fa-icon-class" *ngIf="!isDarkThemeActive">light_mode</mat-icon>
+      </div>
+    </mat-toolbar>
+    
+    <section class="overflow-auto" style="width: 100%">
+      <div id="layout-container">
+        <div class="lottie-container">
+          <div class="welcome-text">
+            <span>Bienvenido, </span><span style="color: #2196f3;"> Usuario</span><span>!</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore corporis iste porro, suscipit temporibus
+               odit ipsum maiores ut rerum repudiandae sequi placeat velit saepe doloremque itaque id neque quasi laudantium,
+               magnam pariatur nesciunt, voluptates accusamus? Ea odio animi assumenda earum aspernatur atque, beatae quae quia
+               hic repellendus veritatis consequuntur aliquam.</p>
+          </div>
+          <app-lottie-anim></app-lottie-anim>
+        </div>
+        <app-footer-page></app-footer-page>
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,0 +1,103 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: inherit;
+}
+
+app-header-page {
+  margin-top: 2rem;
+}
+
+mat-sidenav-content {
+  margin-left: 225px;
+}
+
+app-footer-page {
+  position: absolute;
+  bottom: 1rem;
+}
+
+#menuToolBarID {
+  flex-direction: inherit;
+}
+
+.sidenav-container {
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.sidenav {
+  width: 225px;
+  transition: background-color 0.3s;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep span>span {
+  display: flex;
+}
+
+#layout-container {
+	width: 95%;
+  margin: auto;
+  margin-top: 2rem;
+  height: 85vh;
+}
+
+section {
+  transition: all 0.3s;
+}
+
+body.dark-mode {
+  transition: a
+}
+
+.lottie-container {
+  display: flex;
+  margin: auto;
+  height: 100%;
+}
+
+.welcome-text {
+  flex-grow: 1;
+  width: 71%;
+  align-self: center;
+
+  span {
+    font-size: 2.5rem;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+}
+
+.rol-info-container {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 1rem;
+
+  span {
+    font-size: medium;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 1368px) {
+  #layout-container {
+    height: 90vh;
+  }
+}
