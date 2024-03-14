@@ -34,23 +34,27 @@
         <mat-icon matSuffix class="fa-icon-class" *ngIf="!isDarkThemeActive">light_mode</mat-icon>
       </div>
     </mat-toolbar>
-    
+
     <section class="overflow-auto" style="width: 100%">
       <div id="layout-container">
-        <div class="lottie-container">
-          <div class="welcome-text">
-            <span>Bienvenido, </span><span style="color: #2196f3;"> Usuario</span><span>!</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore corporis iste porro, suscipit temporibus
-               odit ipsum maiores ut rerum repudiandae sequi placeat velit saepe doloremque itaque id neque quasi laudantium,
-               magnam pariatur nesciunt, voluptates accusamus? Ea odio animi assumenda earum aspernatur atque, beatae quae quia
-               hic repellendus veritatis consequuntur aliquam.</p>
-          </div>
-          <app-lottie-anim></app-lottie-anim>
-        </div>
-        <app-footer-page></app-footer-page>
-        <router-outlet></router-outlet>
+        <router-outlet>
+          <ng-container *ngIf="!isComponentBeingRouted;">
+            <div class="lottie-container">
+              <div class="welcome-text">
+                <span>Bienvenido, </span><span style="color: #2196f3;"> Usuario</span><span>!</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore corporis iste porro, suscipit temporibus
+                  odit ipsum maiores ut rerum repudiandae sequi placeat velit saepe doloremque itaque id neque quasi laudantium,
+                  magnam pariatur nesciunt, voluptates accusamus? Ea odio animi assumenda earum aspernatur atque, beatae quae quia
+                  hic repellendus veritatis consequuntur aliquam.</p>
+              </div>
+              <app-lottie-anim></app-lottie-anim>
+            </div>
+          </ng-container>
+          <app-footer-page></app-footer-page>
+        </router-outlet>
       </div>
     </section>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
 

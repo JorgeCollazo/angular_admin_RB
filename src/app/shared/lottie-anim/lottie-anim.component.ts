@@ -14,7 +14,6 @@ export class LottieAnimComponent {
   };
 
    onAnimate(animationItem: AnimationItem): void {
-    console.log(animationItem);
   }
 
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environment/environment';
 import { Observable, catchError, shareReplay, throwError } from 'rxjs';
 import Swal from 'sweetalert2';
+import { User } from './users/interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,32 @@ export class SecurityService {
     });
     return headers;
   }
+
+  /*************************************** Users Section *****************************************/
+
+  getUsers() {
+
+
+  }
+
+  saveUser(user: Partial<User>) {
+
+
+  }
+
+  deleteUser(user_id: number) {
+
+
+  }
+
+  editUser(user: Partial<User>) {
+
+  }
+
+
+
+  /*************************************** Roles Section *****************************************/
+
+  
 
 }

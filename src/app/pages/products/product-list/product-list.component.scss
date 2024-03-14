@@ -1,0 +1,39 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-weight: bolder;
+}
+
+#add-user-button-add-ID, #add-user-button-filter-ID {
+  align-self: center;
+}
+
+#add-user-button-filter-ID {
+  margin-left: 10px;
+}
+
+.container-img-not-found {
+	height: 20rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  flex-direction: column-reverse;
+
+  mat-icon {
+    width: 10rem;
+    height: 10rem;
+    font-size: 180px;
+    text-align: center;
+  }
+  span {
+    font-size: large;
+    margin-top: 1rem;
+  }
+}
+
+.header-buttons-container {
+  display: flex;
+}

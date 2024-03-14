@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -14,6 +15,7 @@ export class NavigationComponent implements OnInit {
 
   private breakpointObserver = inject(BreakpointObserver);
   isDarkThemeActive: boolean = false;
+  isComponentBeingRouted: boolean = false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,11 +23,22 @@ export class NavigationComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) { }
 
   ngOnInit(): void {
     this.checkDarkThemeActive();
     this.onChange(true);
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.isComponentBeingRouted = true;
+      }
+    });
+    
+    if(this.router.routerState.snapshot.url !== '/navigation') {
+          this.isComponentBeingRouted = true;
+    }
+
   }
 
   onChange(newValue: boolean):void {

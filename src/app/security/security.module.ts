@@ -5,9 +5,18 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
+import { UserDialogComponent } from './users/user-dialog/user-dialog.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { RoleListComponent } from './roles/role-list/role-list.component';
+import { RoleDialogComponent } from './roles/role-dialog/role-dialog.component';
 
 @NgModule({
   declarations: [
+  
+    UserDialogComponent,
+       UserListComponent,
+       RoleListComponent,
+       RoleDialogComponent
   ],
   imports: [
     CommonModule,

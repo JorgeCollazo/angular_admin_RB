@@ -21,7 +21,6 @@ export const navbarData: INavbarData[] = [
         icon: 'storefront',
         label: 'Sucursales',
       },
-
       {
         routeLink: 'pages/superGroups-list',
         icon: 'list_alt',
@@ -31,6 +30,11 @@ export const navbarData: INavbarData[] = [
         routeLink: 'pages/products-list',
         icon: 'local_mall',
         label: 'Productos',
+      },
+      {
+        routeLink: 'pages/categories-list',
+        icon: 'category',
+        label: 'Categorías',
       },
       {
         routeLink: 'pages/brands-list',
@@ -55,9 +59,9 @@ export const navbarData: INavbarData[] = [
       label: 'Usuarios',
     },
     {
-      routeLink: 'security/profiles-list',
+      routeLink: 'security/role-list',
       icon: 'manage_accounts',
-      label: 'Perfiles',
+      label: 'Roles',
     },
   ]
 }
