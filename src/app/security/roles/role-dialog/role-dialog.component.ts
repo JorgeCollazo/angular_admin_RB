@@ -35,9 +35,7 @@ export class RoleDialogComponent implements OnInit, OnDestroy{
     this.roleDialogForm = fb.group({
       name: [data ? data.nombre : ''],
       descripcion: [data ? data.descripcion : ''],
-      nivel: [data ? data.nivel : null],
       activeChbx: [data ? data.status : false],
-      adminChbx: [data ? data.sw_admin : false],
     });
   }
 

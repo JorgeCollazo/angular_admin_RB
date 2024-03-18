@@ -1,0 +1,132 @@
+<div class="container">
+  <app-header-page [title]="'Administrar Permisos'" [fontSize]=24></app-header-page>
+  <div class="header-container">
+    <button mat-raised-button color="primary" id="go-back-button-ID" (click)="goBack()"> Regresar <mat-icon>arrow_back</mat-icon></button>
+  </div>
+</div>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Empresas
+      </mat-panel-title>
+      <mat-panel-description>
+        Política de accesos para el menú de Empresas
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <form [formGroup]="rolePoliciesDialogForm">
+        <div class="container-1">
+          <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+        </div>
+        <div class="container-1">
+          <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+          <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+        </div>
+        <div class="container-2">
+          <div mat-dialog-actions class="mat-dialog-actions-custom">
+            <button mat-raised-button color="primary" class="custom-margin-right">Guardar</button>
+          </div>
+        </div>
+      </form>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Departamentos
+      </mat-panel-title>
+      <mat-panel-description>
+        Política de accesos para el menú de Departamentos
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <form [formGroup]="rolePoliciesDialogForm">
+      <div class="container-1">
+        <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+      </div>
+      <div class="container-1">
+        <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+      </div>
+      <div class="container-2">
+        <div mat-dialog-actions class="mat-dialog-actions-custom">
+          <button mat-raised-button color="primary" class="custom-margin-right">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Sucursales
+      </mat-panel-title>
+      <mat-panel-description>
+        Política de accesos para el menú de Sucursales
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <form [formGroup]="rolePoliciesDialogForm">
+      <div class="container-1">
+        <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+      </div>
+      <div class="container-1">
+        <mat-checkbox formControlName="activeChbx">Leer</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Crear</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Editar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Eliminar</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 2</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 3</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 4</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 5</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 6</mat-checkbox>
+        <mat-checkbox formControlName="activeChbx">Accion 7</mat-checkbox>
+      </div>
+      <div class="container-2">
+        <div mat-dialog-actions class="mat-dialog-actions-custom">
+          <button mat-raised-button color="primary" class="custom-margin-right">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </mat-expansion-panel>
+
+</mat-accordion>

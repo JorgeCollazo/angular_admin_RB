@@ -21,6 +21,12 @@ export class UserListComponent implements OnInit, AfterViewInit, OnDestroy {
   displayedColumns: string[] = ['email', 'cedula', 'rol', 'estado', 'actions'];
   dataSource: MatTableDataSource<User>;
 
+  fakeUsers: User[] = [
+    {usuario_id: 1, is_admin: false, cedula: '8-888-111', contrasena: 'pass123', email: 'admin@gmail.com', rol_id: 'Admin', status: 1},
+    {usuario_id: 2, is_admin: false, cedula: '8-777-111', contrasena: 'pass123', email: 'cajero@gmail.com', rol_id: 'Cajero', status: 1},
+    {usuario_id: 3, is_admin: false, cedula: '8-666-111', contrasena: 'pass123', email: 'despachador@gmail.com', rol_id: 'Despachador', status: 0},
+  ];
+
   private users$: Subscription = new Subscription();
   private deleteUsuario$: Subscription = new Subscription();
 
@@ -32,11 +38,11 @@ export class UserListComponent implements OnInit, AfterViewInit, OnDestroy {
     private securityService: SecurityService,
     private toastr: ToastrService
     ) {
-    this.dataSource = new MatTableDataSource();
+    this.dataSource = new MatTableDataSource(this.fakeUsers);
   }
 
   ngOnInit(): void {
-    
+
   }
 
   ngAfterViewInit(): void {

@@ -9,14 +9,16 @@ import { UserDialogComponent } from './users/user-dialog/user-dialog.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RoleDialogComponent } from './roles/role-dialog/role-dialog.component';
+import { RoleAccessPoliciesComponent } from './roles/role-access-policies/role-access-policies.component';
 
 @NgModule({
   declarations: [
-  
+
     UserDialogComponent,
        UserListComponent,
        RoleListComponent,
-       RoleDialogComponent
+       RoleDialogComponent,
+       RoleAccessPoliciesComponent,
   ],
   imports: [
     CommonModule,

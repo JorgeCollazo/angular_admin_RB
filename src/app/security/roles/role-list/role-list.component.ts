@@ -27,6 +27,13 @@ export class RoleListComponent implements OnInit, AfterViewInit, OnDestroy {
   dataSource: MatTableDataSource<Role>;
   isSpinnerLoading: boolean = false;
 
+
+  fakeRoles: Role[] = [
+    {nombre: 'Administrador', descripcion: 'Rol con maximo acceso en la aplicación', rol_id: 1, status: 1},
+    {nombre: 'Cajero', descripcion: 'Rol con acceso a funcionalidades en la caja', rol_id: 2, status: 1},
+    {nombre: 'Despachador', descripcion: 'Rol con acceso al despacho de productos', rol_id: 3, status: 0}
+  ];
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -38,7 +45,7 @@ export class RoleListComponent implements OnInit, AfterViewInit, OnDestroy {
     private securityService: SecurityService,
     private toastr: ToastrService
   ) {
-    this.dataSource = new MatTableDataSource();
+    this.dataSource = new MatTableDataSource(this.fakeRoles);
   }
 
   ngOnInit(): void {
@@ -60,7 +67,7 @@ export class RoleListComponent implements OnInit, AfterViewInit, OnDestroy {
     const dialogRef = this.dialog.open(RoleDialogComponent, {
       disableClose: true,
     });
-    
+
   }
 
   editRol(rol: Role) {
