@@ -42,7 +42,7 @@ export const navbarData: INavbarData[] = [
         label: 'Marcas',
       },
       {
-        routeLink: 'pages/suppliers-list',
+        routeLink: 'pages/vendor-list',
         icon: 'contact_emergency',
         label: 'Proveedores',
       },
@@ -64,8 +64,5 @@ export const navbarData: INavbarData[] = [
       label: 'Roles',
     },
   ]
-}
-
-
-]
+}]
 

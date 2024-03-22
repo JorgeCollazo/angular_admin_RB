@@ -12,6 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { ProductFilteringDialogComponent } from '../product-filtering-dialog/product-filtering-dialog.component';
 
 @Component({
   selector: 'app-product-list',
@@ -66,6 +67,16 @@ export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   openProductDialog(): void {
     const dialogRef = this.dialog.open(ProductDialogComponent, {
+      disableClose: true,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getProducts();
+    });
+  }
+
+  openProductFilteringDialog(): void {
+    const dialogRef = this.dialog.open(ProductFilteringDialogComponent, {
       disableClose: true,
     });
 

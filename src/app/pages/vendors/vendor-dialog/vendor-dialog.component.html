@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Añadir Proveedor</h1>
+<div mat-dialog-content>
+  <form [formGroup]="vendorDialogForm">
+    <div class="container-1">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControlName]="'name'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Teléfono</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+    </div>
+    <div class="container-3">
+      <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <textarea matInput [formControlName]="'address'"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="container-4">
+      <mat-checkbox formControlName="activeChbx">Activo</mat-checkbox>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="mat-dialog-actions-custom">
+  <button mat-raised-button color="primary" (click)="onSaveClick()" *ngIf="!isEditing">Guardar</button>
+  <button mat-raised-button color="warn" (click)="close()">Cerrar</button>
+</div>

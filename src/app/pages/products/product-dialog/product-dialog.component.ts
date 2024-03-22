@@ -62,12 +62,10 @@ export class ProductDialogComponent implements OnInit, OnDestroy {
 
   onSaveClick(): void {
 
-
   }
 
   editProduct() {
 
-    
   }
 
   close() {
