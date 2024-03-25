@@ -1,6 +1,6 @@
-.container-3 mat-form-field {
-  width: 97.5%;
-}
+// .container-4 mat-form-field {
+//   width: 97.5%;
+// }
 
 mat-form-field {
   margin: 0 10px;
@@ -10,7 +10,16 @@ mat-form-field {
   justify-content: end;
 }
 
-.container-4 {
+.container-5 {
 	display: flex;
-	justify-content: space-between;
+	justify-content: start;
+
+  mat-slide-toggle {
+    margin: 0 10px;
+  }
 }
+
+// .slide-toggle-container {
+//   display: flex;
+//   align-items: center;
+// }

@@ -1,7 +1,7 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Vendor } from '../interfaces/proveedor.interface';
+import { Vendor, VendorLegalClassification, VendorType } from '../interfaces/vendor.interface';
 
 @Component({
   selector: 'app-vendor-dialog',
@@ -12,6 +12,9 @@ export class VendorDialogComponent implements OnInit, OnDestroy {
 
   vendorDialogForm!: FormGroup;
   isEditing : boolean;
+  vendorTypes: VendorType[];
+  vendorLegalClassifications: VendorLegalClassification[];
+
 
   constructor(
     public dialogRef: MatDialogRef<VendorDialogComponent>,
@@ -26,6 +29,15 @@ export class VendorDialogComponent implements OnInit, OnDestroy {
         activeChbx: [false]
       });
 
+      this.vendorTypes = [
+       {name: 'Extranjero', value: 0},
+       {name: 'Local', value: 1},
+      ]
+
+      this.vendorLegalClassifications = [
+       {name: 'Persona Natural', value: 0},
+       {name: 'Persona Jurídica', value: 1},
+      ]
   }
 
   ngOnInit(): void {
@@ -47,6 +59,5 @@ export class VendorDialogComponent implements OnInit, OnDestroy {
   close() {
     this.dialogRef.close({isRefreshing: false});
   }
-
 
 }

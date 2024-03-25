@@ -10,6 +10,9 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductFilteringDialogComponent } from './products/product-filtering-dialog/product-filtering-dialog.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
 import { VendorDialogComponent } from './vendors/vendor-dialog/vendor-dialog.component';
+import { VendorNegotiationsListComponent } from './vendors/vendor-negotiations-list/vendor-negotiations-list.component';
+import { VendorNegotiationsDialogComponent } from './vendors/vendor-negotiations-dialog/vendor-negotiations-dialog.component';
+import { VendorDataDialogComponent } from './vendors/vendor-data-dialog/vendor-data-dialog.component';
 
 
 
@@ -20,7 +23,10 @@ import { VendorDialogComponent } from './vendors/vendor-dialog/vendor-dialog.com
     ProductListComponent,
     ProductFilteringDialogComponent,
     VendorListComponent,
-    VendorDialogComponent
+    VendorDialogComponent,
+    VendorNegotiationsListComponent,
+    VendorNegotiationsDialogComponent,
+    VendorDataDialogComponent
   ],
   imports: [
     CommonModule,

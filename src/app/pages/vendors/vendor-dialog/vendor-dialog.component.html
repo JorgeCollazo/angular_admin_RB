@@ -10,15 +10,81 @@
         <mat-label>Teléfono</mat-label>
         <input matInput [formControlName]="'phone'">
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>RUC</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Dígito Verificador</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+    </div>
+    <div class="container-2">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tipo de proveedor</mat-label>
+        <mat-select [formControlName]="'phone'">
+          <mat-option *ngFor="let vendorType of vendorTypes" [value]="vendorType.value">
+            {{vendorType.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Clasificación</mat-label>
+        <mat-select [formControlName]="'phone'">
+          <mat-option *ngFor="let vendorLegalClassification of vendorLegalClassifications" [value]="vendorLegalClassification.value">
+            {{vendorLegalClassification.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fax</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
     </div>
     <div class="container-3">
       <mat-form-field>
-        <mat-label>Dirección</mat-label>
-        <textarea matInput [formControlName]="'address'"></textarea>
+        <mat-label>Apartado Postal</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cuenta interna</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nombre Encargado</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Teléfono Encargado</mat-label>
+        <input matInput [formControlName]="'phone'">
       </mat-form-field>
     </div>
     <div class="container-4">
-      <mat-checkbox formControlName="activeChbx">Activo</mat-checkbox>
+      <mat-form-field>
+        <mat-label>Plazo/Crédito</mat-label>
+        <input matInput [formControlName]="'phone'" placeholder="(Días)">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Saldo actual</mat-label>
+        <input matInput [formControlName]="'phone'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha</mat-label>
+        <input matInput [formControlName]="'phone'" matTooltip="Fecha del último saldo">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Proveedor R. itbms</mat-label>
+        <input matInput [formControlName]="'phone'" matTooltip="Proveedor Retensión itbms">
+      </mat-form-field>
+    </div>
+    <div class="container-5">
+      <mat-slide-toggle formControlName="activeChbx" color="primary">Activo</mat-slide-toggle>
+      <mat-slide-toggle formControlName="phone" color="primary">Proveedor de gasto</mat-slide-toggle>
+      <mat-slide-toggle formControlName="phone" color="primary">Listado de precio</mat-slide-toggle>
     </div>
   </form>
 </div>

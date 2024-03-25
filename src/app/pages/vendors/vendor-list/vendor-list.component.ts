@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Vendor } from '../interfaces/proveedor.interface';
+import { Vendor } from '../interfaces/vendor.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { VendorDialogComponent } from '../vendor-dialog/vendor-dialog.component';
 
@@ -9,18 +9,18 @@ import { VendorDialogComponent } from '../vendor-dialog/vendor-dialog.component'
   templateUrl: './vendor-list.component.html',
   styleUrls: ['./vendor-list.component.scss']
 })
-export class VendorListComponent  implements OnInit, AfterViewInit, OnDestroy {
+export class VendorListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   dataSource: MatTableDataSource<Vendor>;
-  displayedColumns: string[] = ['name', 'address', 'phone', 'ruc', 'status', 'actions'];
-  
+  displayedColumns: string[] = ['name', 'address', 'phone', 'email', 'ruc', 'dv', 'status', 'actions'];
+
   vendors: Vendor[] = [
-    {name: 'Estrella Azul', address: 'Ave Cincuentenario #315', phone: 89755465, ruc: '1-888-777', status: 1},
-    {name: 'Bonlac', address: 'Ave 12 de Octubre #320', phone: 6688785269, ruc: '8-222-555', status:0}
+    {name: 'Estrella Azul', address: 'Ave Cincuentenario #315', phone: 89755465, ruc: '1-888-777', dv: 23, email: 'css@gmail.com', status: 1},
+    {name: 'Bonlac', address: 'Ave 12 de Octubre #320', phone: 6688785269, ruc: '8-222-555', dv: 12, email: 'aaa@gmail.com', status: 0, }
   ];
-  
+
   constructor(public dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource(this.vendors);  
+    this.dataSource = new MatTableDataSource(this.vendors);
   }
 
   ngOnInit(): void {

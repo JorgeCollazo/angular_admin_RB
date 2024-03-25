@@ -1,0 +1,20 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-buttons-container {
+  display: flex;
+}
+
+button {
+  font-weight: bolder;
+}
+
+#add-negotiation-button-ID, #go-back-button-ID {
+  align-self: center;
+}
+
+#go-back-button-ID {
+  margin-left: 0.5rem;
+}

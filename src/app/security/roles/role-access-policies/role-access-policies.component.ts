@@ -13,12 +13,9 @@ export class RoleAccessPoliciesComponent {
   previousUrl: string = '';
 
   constructor(private fb: FormBuilder, private router: Router) {
-
     this.rolePoliciesDialogForm = fb.group({
       activeChbx: false
     });
-
-
   }
 
   goBack() {
