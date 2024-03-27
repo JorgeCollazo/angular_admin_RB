@@ -9,6 +9,7 @@ import { User } from '../interfaces/user.interface';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
+import { TitleService } from 'src/app/shared/title.service';
 
 @Component({
   selector: 'app-user-list',
@@ -36,13 +37,14 @@ export class UserListComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     public dialog: MatDialog,
     private securityService: SecurityService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private titleService: TitleService
     ) {
     this.dataSource = new MatTableDataSource(this.fakeUsers);
   }
 
   ngOnInit(): void {
-
+    this.titleService.setTitle('Administrar Usuarios');
   }
 
   ngAfterViewInit(): void {

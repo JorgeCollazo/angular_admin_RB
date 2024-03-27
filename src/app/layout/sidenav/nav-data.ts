@@ -32,9 +32,14 @@ export const navbarData: INavbarData[] = [
         label: 'Productos',
       },
       {
-        routeLink: 'pages/categories-list',
+        routeLink: 'pages/products-types-list',
+        icon: 'format_list_bulleted',
+        label: 'Tipos de Producto',
+      },
+      {
+        routeLink: 'pages/products-categories-list',
         icon: 'category',
-        label: 'Categorías',
+        label: 'Cat. de Productos',
       },
       {
         routeLink: 'pages/brands-list',

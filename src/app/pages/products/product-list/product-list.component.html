@@ -1,5 +1,4 @@
 <div class="container">
-  <app-header-page [title]="'Administrar Productos'" [fontSize]=24></app-header-page>
   <div class="header-container">
     <div class="header-buttons-container">
       <button mat-raised-button color="primary" id="add-user-button-add-ID" (click)="openProductDialog()">Añadir <mat-icon>add</mat-icon></button>
@@ -7,7 +6,7 @@
     </div>
     <mat-form-field class="my-3">
       <mat-label>Buscar</mat-label>
-      <input matInput  (keyup)="applyFilter($event)" #input>
+      <input matInput (keyup)="applyFilter($event)" #input>
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </div>
@@ -66,7 +65,7 @@
   </div>
   <ng-template #not_found_template>
     <div class="container-img-not-found">
-      <span>No hay productos para mostrar</span>
+      <span>Inicie la búsqueda de productos</span>
       <mat-icon mat-icon-large>search</mat-icon>
       <!-- <img src="../../../../assets/logos/not_found.jpg" alt="not found"> -->
     </div>

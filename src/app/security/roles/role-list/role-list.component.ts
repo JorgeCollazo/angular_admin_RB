@@ -16,6 +16,7 @@ import { SecurityService } from '../../security.service';
 import { Role } from '../interfaces/role.interface';
 import Swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
+import { TitleService } from 'src/app/shared/title.service';
 
 @Component({
   selector: 'app-role-list',
@@ -43,13 +44,14 @@ export class RoleListComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     public dialog: MatDialog,
     private securityService: SecurityService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private titleService: TitleService
   ) {
     this.dataSource = new MatTableDataSource(this.fakeRoles);
   }
 
   ngOnInit(): void {
-
+    this.titleService.setTitle('Administrar Roles');
   }
 
   ngOnDestroy(): void {}

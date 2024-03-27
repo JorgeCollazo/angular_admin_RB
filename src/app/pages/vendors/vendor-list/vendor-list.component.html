@@ -1,5 +1,4 @@
 <div class="container">
-  <app-header-page [title]="'Administrar Proveedores'" [fontSize]=24></app-header-page>
   <div class="header-container">
     <div class="header-buttons-container">
       <button mat-raised-button color="primary" id="add-vendor-button-add-ID" (click)="openVendorDialog()">Añadir <mat-icon>add</mat-icon></button>
@@ -31,7 +30,7 @@
         <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
       </ng-container>
 
-      <!-- Phone Column -->
+      <!-- Email Column -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
         <td mat-cell *matCellDef="let row"> {{row.email}} </td>
@@ -65,7 +64,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let row" class="actions-column" class="actions_column_width">
-          <button mat-icon-button matTooltip="Mas información">
+          <button mat-icon-button matTooltip="Mas información" (click)="showAdditionalInfo(row)">
             <mat-icon> text_snippet </mat-icon>
           </button>
           <button mat-icon-button matTooltip="Asignar negociación" [routerLink]="['/navigation/pages/vendor-negotiations-list']">

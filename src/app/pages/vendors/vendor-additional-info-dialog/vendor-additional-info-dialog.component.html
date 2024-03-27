@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Información adicional</h1>
+<div mat-dialog-content>
+  <div class="container-1">
+    <div>
+      <mat-label>Tipo de Proveedor: </mat-label>
+      <span>{{ vendor.vendorTypeDescription }}</span>
+    </div>
+    <div>
+      <mat-label>Clasificación: </mat-label>
+      <span>{{ vendor.classificationDescription }}</span>
+    </div>
+    <div>
+      <mat-label>Fax: </mat-label>
+      <span>{{ vendor.fax }}</span>
+    </div>
+    <div>
+      <mat-label>Apartado Postal: </mat-label>
+      <span>{{ vendor.postOffice }}</span>
+    </div>
+    <div>
+      <mat-label>Cuenta interna: </mat-label>
+      <span>{{ vendor.innerAccount }}</span>
+    </div>
+    <div>
+      <mat-label>Nombre encargado: </mat-label>
+      <span>{{ vendor.inChargeName }}</span>
+    </div>
+    <div>
+      <mat-label>Telefono encargado: </mat-label>
+      <span>{{ vendor.inChargePhone }}</span>
+    </div>
+    <div>
+      <mat-label>Plazo/Credito: </mat-label>
+      <span>{{ vendor.termCredit }}</span>
+    </div>
+    <div>
+      <mat-label>Fecha ultimo saldo: </mat-label>
+      <span>{{ vendor.lastDateCurrentBalance }}</span>
+    </div>
+    <div>
+      <mat-label>Saldo actual: </mat-label>
+      <span>{{ vendor.currentBalance }}</span>
+    </div>
+    <div>
+      <mat-label>Proveedor Retencion ITBMS: </mat-label>
+      <span>{{ vendor.vendorRetentionITBMS }}</span>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="mat-dialog-actions-custom">
+  <button mat-raised-button color="warn" (click)="close()">Cerrar</button>
+</div>

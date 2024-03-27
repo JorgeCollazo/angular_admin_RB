@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderPageComponent {
 
-  @Input() title: string = 'Licencias';
+  @Input() title: string | null = '';
   @Input() fontSize: number = 0;
 
 }

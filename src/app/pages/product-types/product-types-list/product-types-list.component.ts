@@ -1,38 +1,39 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
-import { ToastrService } from 'ngx-toastr';
-import { Product, ResponseProducto } from '../interfaces/product.interface';
 import { Subscription } from 'rxjs';
 import { PagesService } from '../../pages.service';
-import {MatTooltipModule} from '@angular/material/tooltip';
-
-import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { ProductFilteringDialogComponent } from '../product-filtering-dialog/product-filtering-dialog.component';
 import { TitleService } from 'src/app/shared/title.service';
+import { ToastrService } from 'ngx-toastr';
+import { ProductType } from '../interfaces/product-type.interface';
+import { ProductTypesDialogComponent } from '../product-types-dialog/product-types-dialog.component';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss'],
+  selector: 'app-product-types-list',
+  templateUrl: './product-types-list.component.html',
+  styleUrls: ['./product-types-list.component.scss']
 })
+export class ProductTypesListComponent implements OnInit, AfterViewInit, OnDestroy {
 
-export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
-
-  displayedColumns: string[] = ['name', 'description', 'lic_nombre', 'status', 'actions'];
-  dataSource: MatTableDataSource<Product>;
+  displayedColumns: string[] = ['description', 'price_perc', 'actions'];
+  dataSource: MatTableDataSource<ProductType>;
   getProductos$: Subscription = new Subscription();
   deleteProducto$: Subscription = new Subscription();
   isSpinnerLoading: boolean = false;
 
+  types: ProductType[] = [
+    {product_Id: 1, description: 'Indefinido', price_perc: 0.00000},
+    {product_Id: 2, description: 'Margen del 50%', price_perc: 0.50505},
+    {product_Id: 3, description: 'Margen del 0.769230', price_perc: 0.76923},
+    {product_Id: 4, description: 'Viveres', price_perc: 0.84000},
+    {product_Id: 5, description: 'Viveres al 19%', price_perc: 0.84034}
+  ]
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild('not_found_template')
-  not_found_template!: TemplateRef<any>;
 
   constructor(
     public dialog: MatDialog,
@@ -45,8 +46,9 @@ export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.getProducts();
-    this.titleService.setTitle('Administrar Productos');
+    this.getProductTypes();
+    this.titleService.setTitle('Administrar Tipos de Productos');
+    this.dataSource = new MatTableDataSource(this.types);
   }
 
   ngAfterViewInit() {
@@ -69,36 +71,25 @@ export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   openProductDialog(): void {
-    const dialogRef = this.dialog.open(ProductDialogComponent, {
+    const dialogRef = this.dialog.open(ProductTypesDialogComponent, {
       disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getProducts();
+      this.getProductTypes();
     });
   }
 
-  openProductFilteringDialog(): void {
-    const dialogRef = this.dialog.open(ProductFilteringDialogComponent, {
-      disableClose: true,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.getProducts();
-    });
-  }
-
-  getProducts() {
+  getProductTypes() {
 
   }
 
-  deleteProduct(product: Product) {
+  editProductType(product: ProductType) {
 
   }
 
-  editProduct(product: Product) {
+  deleteProductType(product: ProductType) {
 
 
   }
-
 }

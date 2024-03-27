@@ -6,6 +6,19 @@ export interface Vendor {
   status: number;
   dv: number;
   email: string;
+  vendorTypeDescription: string;
+  vendorTypeID: number;
+  classificationDescription: string;
+  classificationID: number;
+  fax: string;
+  postOffice: string;
+  innerAccount: number;
+  inChargeName: string;
+  inChargePhone: string;
+  termCredit: number;
+  currentBalance: number;
+  lastDateCurrentBalance: string;
+  vendorRetentionITBMS: string;
 }
 
 export interface VendorNegotiation {

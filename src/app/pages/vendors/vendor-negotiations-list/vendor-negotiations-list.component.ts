@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { VendorNegotiationsDialogComponent } from '../vendor-negotiations-dialog/vendor-negotiations-dialog.component';
 import { FormBuilder } from '@angular/forms';
 import { NavigationStart, Router } from '@angular/router';
+import { TitleService } from 'src/app/shared/title.service';
 
 @Component({
   selector: 'app-vendor-negotiations-list',
@@ -23,12 +24,12 @@ export class VendorNegotiationsListComponent implements OnInit, AfterViewInit, O
 
   previousUrl: string = '';
 
-  constructor(public dialog: MatDialog, private fb: FormBuilder, private router: Router) {
+  constructor(public dialog: MatDialog, private fb: FormBuilder, private router: Router, private titleService: TitleService) {
     this.dataSource = new MatTableDataSource(this.vendors);
   }
 
   ngOnInit(): void {
-
+    this.titleService.setTitle('Administrar negociaciones');
   }
 
   ngAfterViewInit(): void {

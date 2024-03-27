@@ -15,7 +15,7 @@ export class VendorNegotiationsDialogComponent implements OnInit, OnDestroy {
 
   constructor(
     public dialogRef: MatDialogRef<VendorNegotiationsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: VendorNegotiation, private fb: FormBuilder,) {
+    @Inject(MAT_DIALOG_DATA) public data: VendorNegotiation, private fb: FormBuilder) {
 
       this.isEditing = !!data;
       this.vendorNegociationDialogForm = fb.group({
